@@ -7,7 +7,10 @@ const model = require("../services/gemini");
 // }
 
 const generateText1 = async (req, res) => {
-    const { prompt } = req.body || {};
+    // const { prompt } = req.body || {};
+    const { prompt } = {
+        "prompt": "Suggest 5 creative marketing ideas for a small coffee shop."
+    };
 
     if (!prompt) {
         return res.status(400).json({ message: "Prompt is required" });
